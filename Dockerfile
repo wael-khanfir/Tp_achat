@@ -1,7 +1,4 @@
-FROM maven:3.8.2-jdk-8
-
-WORKDIR /spring-app
-COPY . .
-RUN mvn clean install
-
-CMD mvn spring-boot:run
+FROM openjdk:11-jdk-alpine
+EXPOSE 8081
+ADD target/spring-boot-docker.jar spring-boot-docker.jar
+ENTRYPOINT["java","-jar","/spring-boot-docker.jar"]

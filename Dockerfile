@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-alpine
+FROM openjdk:8-jdk-alpine
 EXPOSE 8083
-ADD target/spring-boot-docker.war spring-boot-docker.war
-ENTRYPOINT["java","-jar","/spring-boot-docker.war"]
+ADD target/docker-spring-boot.war docker-spring-boot.war
+ENTRYPOINT ["java","-jar","/docker-spring-boot.war"]
